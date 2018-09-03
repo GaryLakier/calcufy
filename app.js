@@ -2,10 +2,9 @@ var express        = require("express"),
     app            = express(),
     bodyParser     = require("body-parser"),
     mongoose       = require("mongoose"),
-    methodOverride = require("method-override"),
-    jsdom          = require("node-jsdom")
+    methodOverride = require("method-override")
     
-mongoose.connect(process.ENV.MONGO_URI || "mongodb://localhost/cost_calc")
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/cost_calc")
 
 
 //candidate Schema
@@ -73,21 +72,9 @@ app.use(express.static("public"));
 //require Routes
 var indexRoutes = require("./routes/index")
 
-
-//what is this? JQUERY environment?
-jsdom.env("", function(err, window) {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    var $ = require("jquery")(window);
-});
-
-
 ///ROUTES
 app.use("/", indexRoutes)
 
-
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(process.env.PORT || '3000', process.env.IP || '0.0.0.0', function(){
     console.log("App now running...")
 });
