@@ -1,0 +1,34 @@
+
+.calendar-width{
+    width: 100% !important;
+}
+
+.link {
+    cursor: pointer;
+}
+
+body{
+    /*background-image:url('../assets/images/mauro-mora-85112-unsplash.jpg');*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 100% auto;*/
+    /*background-position: center top;*/
+    /*background-attachment: fixed;*/
+    background-color: #f9f9f9;
+    font-family: 'roboto', sans-serif !important; 
+}
+
+.expandEntryIcon{
+	float: right;
+	transition: 0.4s linear;
+}
+
+
+/*collapse all fields on open except for general info*/
+.collapsible{
+    display:none;
+}
+
+#general-info{
+    display: block;
+}
+
