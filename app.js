@@ -5,7 +5,7 @@ var express        = require("express"),
     methodOverride = require("method-override"),
     jsdom          = require("node-jsdom")
     
-mongoose.connect("mongodb://localhost/cost_calc")
+mongoose.connect(process.ENV.MONGO_URI || "mongodb://localhost/cost_calc")
 
 
 //candidate Schema
